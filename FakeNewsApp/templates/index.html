@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detection</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+    <h1>Fake News Detection System</h1>
+
+    <form method="post">
+        <textarea name="news" rows="8" cols="80" placeholder="Enter news text here..." required></textarea><br><br>
+        <button type="submit">Check News</button>
+    </form>
+
+    {% if results %}
+        <h2>Results</h2>
+        {% for model, result in results.items() %}
+            <p><strong>{{ model }}:</strong> {{ result }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
